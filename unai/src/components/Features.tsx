@@ -3,69 +3,78 @@ import { CheckCircle2, Zap, Users } from "lucide-react";
 
 const features = [
   {
-    title: "Quality Without Compromise",
-    description: "We adhere to the highest coding standards and architectural patterns, ensuring long-term maintainability.",
+    title: "Quantum Accuracy",
+    description: "We adhere to the highest architectural standards, ensuring long-term technical debt reduction and maintainability.",
     icon: CheckCircle2
   },
   {
-    title: "Agile & Fluid Delivery",
-    description: "Our \"Precision Fluidity\" approach allows us to pivot rapidly without losing architectural integrity.",
+    title: "Precision Fluidity",
+    description: "Our unique approach allows enterprises to pivot rapidly without compromising on security or core integrity.",
     icon: Zap
   },
   {
-    title: "Strategic Partnership",
-    description: "We act as an extension of your CTO office, providing strategic roadmap guidance at every step.",
+    title: "Strategic Architecture",
+    description: "Acting as an extension of your leadership, we architect roadmaps that translate vision into resilient technology.",
     icon: Users
   }
 ];
 
 export default function Features() {
   return (
-    <section className="py-24 bg-surface">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-headline text-4xl font-bold mb-8">Why the Industry Trusts Our <span className="text-primary italic">Architecture</span>.</h2>
-            <div className="space-y-8">
+            <span className="text-primary font-bold text-xs tracking-widest uppercase mb-4 block">Our Advantage</span>
+            <h2 className="font-headline text-4xl md:text-5xl font-black text-navy mb-10 leading-tight">
+              Why Global Leaders Trust Our <span className="text-primary italic underline decoration-indigo-200 underline-offset-8">Strategy</span>.
+            </h2>
+            <div className="space-y-10">
               {features.map((feature, index) => (
                 <motion.div 
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  className="flex gap-6"
+                  transition={{ delay: index * 0.15 }}
+                  className="flex gap-6 group"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+                  <div className="shrink-0 w-14 h-14 bg-white border border-slate-100 shadow-sm rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                     <feature.icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h5 className="text-lg font-bold mb-2">{feature.title}</h5>
-                    <p className="text-on-surface-variant text-sm">{feature.description}</p>
+                    <h5 className="text-xl font-bold text-navy mb-2 group-hover:text-primary transition-colors">{feature.title}</h5>
+                    <p className="text-text-muted text-base leading-relaxed">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+          
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative bg-surface-container-low rounded-[3rem] p-12"
+            className="relative lg:block hidden"
           >
-            <div className="absolute inset-0 signature-gradient opacity-5 rounded-[3rem]"></div>
-            <img 
-              alt="Quality Work" 
-              className="rounded-2xl shadow-2xl relative z-10 w-full" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXJKVTbyiA_ig2ufZkECGNuouyWH8fyUdvDQpB7UuTX5z2k6UoiSkf26M03xOfDdwfyVBuJlfRoSxIhgvssgyfx9B_Nhd-EFmRq1zaVr0XvQwpmCyvyg1OmuaOqdmQsO-hqbNpyaWmN9OzLRtxvwmCZ49dgC3ej8McYg2Kh9yya4C5bBIhBba_d5z5MicME_PBXl8a4Fiu6lWOBwK5ojfbzK4Y5PJ_a_Eik90s1TjwszvICu_5z7RYTDa9k4gm0jkgShELSQLqGw"
-              referrerPolicy="no-referrer"
-            />
+            <div className="premium-card p-4 overflow-hidden group">
+              <img 
+                alt="Engineering Excellence" 
+                className="rounded-xl w-full h-[600px] object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent opacity-60"></div>
+              <div className="absolute bottom-10 left-10 right-10 p-8 glass-card rounded-2xl border-white/10">
+                <p className="text-white font-bold text-lg mb-2">Architectural Excellence</p>
+                <p className="text-slate-200 text-sm italic">"Delivering solutions that don't just solve problems, but define new benchmarks."</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

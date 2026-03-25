@@ -1,36 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-headline: "Manrope", sans-serif;
+  --font-headline: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
 
-  --color-primary: #453bed;
-  --color-on-primary: #f4f1ff;
-  --color-secondary: #595c5e;
-  --color-tertiary: #006576;
-  --color-surface: #f3f7fb;
-  --color-background: #f3f7fb;
-  --color-on-surface: #2a2f32;
-  --color-on-surface-variant: #575c60;
-  --color-surface-container-low: #ecf1f6;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-high: #dde3e8;
-  --color-surface-container-highest: #d7dee3;
-  --color-tertiary-container: #53ddfc;
-  --color-on-tertiary-container: #004b58;
-  --color-primary-container: #9695ff;
-  --color-on-primary-container: #12007f;
-  --color-tertiary-fixed: #53ddfc;
+  --color-navy: #0B0F2F;
+  --color-primary: #4F46E5;
+  --color-primary-light: #818CF8;
+  --color-accent: #06B6D4;
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-text: #0F172A;
+  --color-text-muted: #475569;
+  
+  --shadow-premium: 0 20px 50px rgba(11, 15, 47, 0.05);
+  --shadow-premium-hover: 0 30px 60px rgba(11, 15, 47, 0.1);
+  
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
 }
 
 @utility signature-gradient {
-  background: linear-gradient(135deg, #453bed 0%, #53ddfc 100%);
+  background: linear-gradient(135deg, #0B0F2F 0%, #4F46E5 50%, #06B6D4 100%);
 }
 
 @utility glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@utility premium-card {
+  @apply bg-surface rounded-2xl shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-1;
 }
 
 @layer base {
@@ -38,6 +41,6 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-surface text-on-surface font-body;
+    @apply bg-background text-text font-body antialiased;
   }
 }

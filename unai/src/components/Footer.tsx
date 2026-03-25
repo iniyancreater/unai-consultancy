@@ -1,55 +1,98 @@
-import { Globe, Share2, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Linkedin, Twitter, Github, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="w-full pt-16 pb-8 bg-slate-50 border-t border-slate-200/50">
-      <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div>
-          <span className="text-xl font-bold text-slate-900 mb-4 block">Digital Architect</span>
-          <p className="text-slate-500 font-body text-sm leading-relaxed max-w-xs">
-            Crafting premium digital infrastructures with precision and strategic fluidity.
-          </p>
-        </div>
-        <div>
-          <h5 className="font-bold text-slate-900 mb-6">Services</h5>
-          <ul className="space-y-4">
-            <li><a className="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Cloud Architecture</a></li>
-            <li><a className="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Software Design</a></li>
-            <li><a className="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Data Strategy</a></li>
-            <li><a className="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Cyber Defense</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 className="font-bold text-slate-900 mb-6">Company</h5>
-          <ul className="space-y-4">
-            <li><a className="text-slate-500 hover:text-primary transition-colors text-sm" href="#">About Us</a></li>
-            <li><a className="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Our Process</a></li>
-            <li><a className="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Portfolio</a></li>
-            <li><a className="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Careers</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 className="font-bold text-slate-900 mb-6">Connect</h5>
-          <div className="flex gap-4">
-            <a className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-              <Globe className="w-5 h-5" />
-            </a>
-            <a className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-              <Share2 className="w-5 h-5" />
-            </a>
-            <a className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-              <Mail className="w-5 h-5" />
-            </a>
+    <footer className="bg-navy text-white pt-24 pb-8 border-t border-white/5 relative overflow-hidden">
+      {/* Ambient glowing background accent */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+
+          {/* Column 1: Brand & Tagline */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="inline-block mb-6">
+              <img src="/unai-logo.png" alt="Unai Consultancy" className="h-10 w-auto brightness-0 invert" />
+            </Link>
+            <p className="text-indigo-100/80 text-sm leading-relaxed mb-8 pr-4">
+              Architects of the Digital Future. Delivering scalable engineering and strategic consulting solutions to global enterprises.
+            </p>
+            {/* Social Icons */}
+            <div className="flex items-center gap-4">
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="https://github.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
+                <Github className="w-4 h-4" />
+              </a>
+            </div>
           </div>
+
+          {/* Column 2: Quick Links */}
+          <div>
+            <h4 className="font-headline font-bold text-lg mb-6 text-white tracking-wide">Quick Links</h4>
+            <ul className="space-y-4 text-sm font-medium text-indigo-100/80">
+              <li><Link to="/" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Home</Link></li>
+              <li><Link to="/about" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Services</Link></li>
+              <li><Link to="/careers" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Careers</Link></li>
+              <li><Link to="/blog" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Insights & Blog</Link></li>
+              <li><Link to="/contact" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Services */}
+          <div>
+            <h4 className="font-headline font-bold text-lg mb-6 text-white tracking-wide">Our Expertise</h4>
+            <ul className="space-y-4 text-sm font-medium text-indigo-100/80">
+              <li><Link to="/services" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Software Development</Link></li>
+              <li><Link to="/services" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">AI & Innovation</Link></li>
+              <li><Link to="/services" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Business Strategy</Link></li>
+              <li><Link to="/services" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Digital Marketing</Link></li>
+              <li><Link to="/services" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">Data & Analytics</Link></li>
+              <li><Link to="/services" className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">HR Consulting</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Contact Info */}
+          <div>
+            <h4 className="font-headline font-bold text-lg mb-6 text-white tracking-wide">Contact Intelligence</h4>
+            <ul className="space-y-5 text-sm font-medium text-indigo-100/80">
+              <li className="flex items-start gap-4">
+                <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <a href="mailto:contact@unaiconsultancy.com" className="hover:text-white transition-colors">contact@unaiconsultancy.com</a>
+              </li>
+              <li className="flex items-start gap-4">
+                <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <a href="tel:+914400000000" className="hover:text-white transition-colors">+91 9043900697</a>
+              </li>
+              <li className="flex items-start gap-4">
+                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="leading-relaxed">
+                  UNAI Tech Tower<br />
+                  Taramani, Chennai<br />
+                  Tamil Nadu 600113, India
+                </span>
+              </li>
+            </ul>
+          </div>
+
         </div>
-      </div>
-      <div className="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-200/50 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-slate-500 font-body text-sm leading-relaxed">© 2024 Digital Architect. Precision Fluidity in Tech.</p>
-        <div className="flex gap-8">
-          <a className="text-slate-500 hover:text-primary text-sm" href="#">Privacy Policy</a>
-          <a className="text-slate-500 hover:text-primary text-sm" href="#">Terms of Service</a>
-          <a className="text-slate-500 hover:text-primary text-sm" href="#">Cookie Policy</a>
-          <a className="text-slate-500 hover:text-primary text-sm" href="#">Sitemap</a>
+
+        {/* Copyright & Legal */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-indigo-100/50 font-medium">
+          <p>&copy; {currentYear} UNAI Consultancy Services. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+          </div>
         </div>
       </div>
     </footer>
