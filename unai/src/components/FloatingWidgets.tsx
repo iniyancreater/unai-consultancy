@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { MessageSquare, Phone, X, Send, Calendar, Clock, CheckCircle2 } from "lucide-react";
 
@@ -39,7 +39,6 @@ export default function FloatingWidgets() {
           onClick={() => setIsBookingOpen(true)}
           className="bg-navy text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold shadow-2xl flex items-center gap-3 border border-indigo-900 overflow-hidden group"
         >
-          <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
           <Calendar className="w-5 h-5 relative z-10" />
           <span className="relative z-10 hidden sm:block">Book Appointment</span>
           <span className="relative z-10 sm:hidden">Book</span>
@@ -63,9 +62,9 @@ export default function FloatingWidgets() {
         <motion.button 
           whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
           onClick={() => setIsChatOpen(!isChatOpen)}
-          className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 focus:outline-none"
+          className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 focus:outline-none"
         >
-          {isChatOpen ? <X className="w-7 h-7" /> : <MessageSquare className="w-7 h-7" />}
+          {isChatOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
         </motion.button>
       </div>
 

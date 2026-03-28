@@ -71,8 +71,8 @@ export default function Features() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent opacity-60"></div>
               <div className="absolute bottom-10 left-10 right-10 p-8 glass-card rounded-2xl border-white/10">
-                <p className="text-white font-bold text-lg mb-2">Architectural Excellence</p>
-                <p className="text-slate-200 text-sm italic">"Delivering solutions that don't just solve problems, but define new benchmarks."</p>
+                <p className="text-black font-bold text-lg mb-2">Architectural Excellence</p>
+                <p className="text-black text-sm italic">"Delivering solutions that don't just solve problems, but define new benchmarks."</p>
               </div>
             </div>
           </motion.div>

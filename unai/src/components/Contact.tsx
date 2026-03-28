@@ -65,7 +65,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-navy text-lg mb-1">Call Us</h4>
                   <p className="text-text-muted mb-1">Mon-Fri from 9am to 6pm IST.</p>
-                  <a href="tel:+914400000000" className="text-primary font-bold hover:underline">+91 9043900697</a>
+                  <a href="tel:+914400000000" className="text-primary font-bold hover:underline">+91 90439 00697</a>
                 </div>
               </div>
 

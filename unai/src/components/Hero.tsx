@@ -55,9 +55,9 @@ export default function Hero() {
             Next-Gen Consulting
           </motion.span>
           
-          <h1 className="font-headline text-4xl md:text-7xl font-black tracking-tight text-white mb-8 leading-[1.05]">
+          <h1 className="font-headline text-4xl md:text-7xl font-black tracking-tight text-white mb-8 leading-[1.2]">
             Empowering Businesses with <br />
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic">Next-Gen Solutions.</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent italic inline-block pb-2">Next-Gen Solutions.</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-xl">
@@ -125,8 +125,8 @@ export default function Hero() {
                   <Activity className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">AI Growth Index</p>
-                  <p className="text-xl font-black text-white">+142% Velocity</p>
+                  <p className="text-xs text-black/60 font-bold uppercase tracking-wider">AI Growth Index</p>
+                  <p className="text-xl font-black text-black">+142% Velocity</p>
                 </div>
               </div>
             </motion.div>

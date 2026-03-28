@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Code, Monitor, TrendingUp, Globe, GraduationCap, 
@@ -8,6 +8,10 @@ import {
 
 export default function Services() {
   const [openIndex, setOpenIndex] = useState<number>(0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
 
   const services = [
     {
@@ -117,7 +121,7 @@ export default function Services() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
                     service.premium 
-                      ? isOpen ? 'border-primary ring-2 ring-primary/20 bg-gradient-to-br from-navy via-indigo-950 to-navy text-white shadow-xl shadow-primary/20' : 'border-indigo-200 bg-white hover:border-primary'
+                      ? isOpen ? 'border-indigo-200 bg-white shadow-lg' : 'border-indigo-200 bg-white hover:border-primary'
                       : isOpen ? 'border-indigo-200 bg-white shadow-lg' : 'border-slate-200 bg-white hover:border-slate-300'
                   }`}
                 >
@@ -127,9 +131,7 @@ export default function Services() {
                   >
                     <div className="flex items-center gap-6">
                       <div className={`w-14 h-14 shrink-0 rounded-2xl flex items-center justify-center transition-colors ${
-                        service.premium
-                          ? isOpen ? 'bg-white/10 text-accent' : 'bg-gradient-to-br from-primary to-accent text-white'
-                          : isOpen ? 'bg-primary text-white' : 'bg-slate-50 text-primary group-hover:bg-indigo-50'
+                        isOpen ? 'bg-primary text-white' : 'bg-slate-50 text-primary group-hover:bg-indigo-50'
                       }`}>
                         <service.icon className="w-6 h-6" />
                       </div>
@@ -137,9 +139,7 @@ export default function Services() {
                         {service.premium && (
                           <span className={`${isOpen ? 'text-accent' : 'text-primary'} font-bold text-[10px] tracking-widest uppercase mb-1 block`}>Premium Service</span>
                         )}
-                        <h3 className={`font-headline text-xl md:text-2xl font-black transition-colors ${
-                          service.premium && isOpen ? 'text-white' : 'text-navy'
-                        }`}>
+                        <h3 className={`font-headline text-xl md:text-2xl font-black transition-colors text-navy`}>
                           {service.title}
                         </h3>
                         {/* Show description preview when closed on larger screens if not premium, or just keep it simple */}
@@ -150,8 +150,8 @@ export default function Services() {
                         )}
                       </div>
                     </div>
-                    <div className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center transition-transform duration-300 ${isOpen ? 'rotate-180 bg-slate-100/10' : 'bg-slate-50 group-hover:bg-slate-100'}`}>
-                      <ChevronDown className={`w-5 h-5 ${service.premium && isOpen ? 'text-white' : 'text-navy'}`} />
+                    <div className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center transition-transform duration-300 ${isOpen ? 'rotate-180 bg-slate-100' : 'bg-slate-50 group-hover:bg-slate-100'}`}>
+                      <ChevronDown className="w-5 h-5 text-navy" />
                     </div>
                   </button>
 
@@ -163,15 +163,15 @@ export default function Services() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <div className={`p-6 md:p-8 pt-0 border-t ${service.premium ? 'border-white/10' : 'border-slate-100'} ml-[5rem] md:ml-[5.5rem]`}>
-                          <p className={`text-base md:text-lg mb-8 font-medium ${service.premium ? 'text-indigo-100' : 'text-text-muted'}`}>
+                        <div className={`p-6 md:p-8 pt-0 border-t border-slate-100 ml-[5rem] md:ml-[5.5rem]`}>
+                          <p className="text-base md:text-lg mb-8 font-medium text-text-muted">
                             {service.description}
                           </p>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
                             {service.bullets.map((bullet, i) => (
                               <div key={i} className="flex items-start gap-3">
-                                <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${service.premium ? 'text-accent' : 'text-primary'}`} />
-                                <span className={service.premium ? 'text-slate-200' : 'text-navy'}>{bullet}</span>
+                                <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-primary" />
+                                <span className="text-navy">{bullet}</span>
                               </div>
                             ))}
                           </div>

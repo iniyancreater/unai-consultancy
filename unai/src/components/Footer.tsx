@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Github, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,14 +22,16 @@ export default function Footer() {
             </p>
             {/* Social Icons */}
             <div className="flex items-center gap-4">
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
+              <a href="https://www.linkedin.com/in/unai-tech-2177072a0" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
-                <Twitter className="w-4 h-4" />
+              <a href="https://x.com/UnaiTech74505" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.486 3.24H4.298l13.309 17.41z" />
+                </svg>
               </a>
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
-                <Github className="w-4 h-4" />
+              <a href="https://www.instagram.com/unai.tech?igsh=MXZycG91ZzMzeGw0ZQ==" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-primary hover:text-white transition-all hover:-translate-y-1">
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -70,7 +72,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-4">
                 <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <a href="tel:+914400000000" className="hover:text-white transition-colors">+91 9043900697</a>
+                <a href="tel:+919043900697" className="hover:text-white transition-colors">+91 90439 00697</a>
               </li>
               <li className="flex items-start gap-4">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />

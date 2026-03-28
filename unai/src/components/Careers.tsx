@@ -93,10 +93,6 @@ export default function Careers() {
               <h2 className="font-headline text-3xl md:text-5xl font-black text-navy mb-4">Open <span className="text-primary italic">Positions</span></h2>
               <p className="text-text-muted text-lg">Find your next defining career move.</p>
             </div>
-            <div className="flex gap-2">
-              <span className="px-4 py-1.5 bg-indigo-50 text-primary font-bold text-sm rounded-full">All Roles</span>
-              <span className="px-4 py-1.5 bg-white border border-slate-200 text-slate-500 font-medium text-sm rounded-full hover:border-primary hover:text-primary transition-colors cursor-pointer">Engineering</span>
-            </div>
           </div>
 
           <div className="space-y-4">

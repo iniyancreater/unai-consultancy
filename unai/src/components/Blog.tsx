@@ -71,7 +71,7 @@ export default function Blog() {
       <section className="pt-16 pb-12 bg-navy text-white text-center px-6 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none"></div>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto relative z-10">
-          <h1 className="font-headline text-5xl md:text-6xl font-black mb-6">Our <span className="text-accent italic">Insights</span></h1>
+          <h1 className="font-headline text-5xl md:text-7xl font-black mb-6">Our <span className="text-accent italic">Insights.</span></h1>
           <p className="text-indigo-100 text-lg leading-relaxed">
             Expert perspectives on software engineering, artificial intelligence, and digital strategy shaping the future of business.
           </p>
