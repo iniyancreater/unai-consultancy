@@ -154,12 +154,7 @@ export default function Blog() {
               ))}
             </div>
             
-            {/* Pagination / Load More */}
-            <div className="mt-16 flex justify-center">
-              <button className="px-8 py-3 rounded-full bg-slate-100 text-navy font-bold hover:bg-slate-200 transition-colors border border-slate-200">
-                Load More Articles
-              </button>
-            </div>
+
           </div>
 
           {/* Sidebar */}
