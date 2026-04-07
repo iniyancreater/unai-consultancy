@@ -80,6 +80,16 @@ const AIChatbot: React.FC = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
+  /* Lock body scroll when chat or appointment open */
+  useEffect(() => {
+    if (chatOpen || apptOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [chatOpen, apptOpen]);
+
   /* Focus input when chat opens */
   useEffect(() => {
     if (chatOpen) setTimeout(() => inputRef.current?.focus(), 300);
@@ -265,7 +275,13 @@ const AIChatbot: React.FC = () => {
                 </div>
 
                 {/* Messages */}
-                <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4" style={{ background: "#F8FAFC" }}>
+                <div 
+                  className="flex-1 overflow-y-auto px-4 py-4 space-y-4" 
+                  style={{ 
+                    background: "#F8FAFC",
+                    overscrollBehavior: "contain"
+                  }}
+                >
                   {messages.map((msg) => (
                     <div key={msg.id} className={`flex items-start gap-2.5 ${msg.role === "user" ? "flex-row-reverse" : ""}`}>
                       <div
